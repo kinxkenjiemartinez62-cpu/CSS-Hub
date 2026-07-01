@@ -240,6 +240,7 @@
             padding: 24px;
             transition: transform 0.15s, box-shadow 0.15s;
             box-shadow: var(--shadow);
+            cursor: pointer;
         }
         .card:hover {
             transform: translateY(-4px);
@@ -280,6 +281,42 @@
             padding-top: 12px;
             border-top: 1px solid var(--border);
             margin-top: 8px;
+        }
+
+        /* ========== VIDEO WRAPPER (responsive) ========== */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 16px 0;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ========== IMAGE STYLES ========== */
+        .diagram-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        .diagram-container .caption {
+            margin-top: 8px;
+            color: var(--text2);
+            font-size: 0.9rem;
         }
 
         /* ========== MOTHERBOARD DIAGRAM ========== */
@@ -391,6 +428,13 @@
             color: var(--accent);
             font-weight: 500;
         }
+        .educational-note {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: var(--text2);
+            opacity: 0.8;
+            font-style: italic;
+        }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 992px) {
@@ -475,11 +519,27 @@
             <a href="#" class="btn" data-page="pc-building">Start Learning <i class="fas fa-arrow-right"></i></a>
         </div>
         <h2>Quick Start</h2>
-        <div class="card-grid">
-            <div class="card"><i class="fas fa-microchip"></i><h3>PC Building</h3><p>Step-by-step guide to assemble a computer.</p></div>
-            <div class="card"><i class="fas fa-network-wired"></i><h3>Ethernet</h3><p>Learn cable standards and crimping.</p></div>
-            <div class="card"><i class="fas fa-server"></i><h3>Server Setup</h3><p>Configure Windows/Linux servers.</p></div>
-            <div class="card"><i class="fas fa-tools"></i><h3>Troubleshooting</h3><p>Diagnose common hardware/software issues.</p></div>
+        <div class="card-grid" id="quickAccessCards">
+            <div class="card" data-page="pc-building">
+                <i class="fas fa-microchip"></i>
+                <h3>PC Building</h3>
+                <p>Step-by-step guide to assemble a computer.</p>
+            </div>
+            <div class="card" data-page="ethernet">
+                <i class="fas fa-network-wired"></i>
+                <h3>Ethernet</h3>
+                <p>Learn cable standards and crimping with video & diagram.</p>
+            </div>
+            <div class="card" data-page="server">
+                <i class="fas fa-server"></i>
+                <h3>Server Setup</h3>
+                <p>Configure Windows/Linux servers.</p>
+            </div>
+            <div class="card" data-page="troubleshooting">
+                <i class="fas fa-tools"></i>
+                <h3>Troubleshooting</h3>
+                <p>Diagnose common hardware/software issues.</p>
+            </div>
         </div>
     </section>
 
@@ -526,10 +586,35 @@
         </details>
     </section>
 
-    <!-- ==================== ETHERNET ==================== -->
+    <!-- ==================== ETHERNET (with VIDEO & IMAGE) ==================== -->
     <section id="page-ethernet" class="page-section">
         <h2><i class="fas fa-network-wired"></i> Ethernet Installation</h2>
         <p>Ethernet standards: CAT5e (1 Gbps), CAT6 (10 Gbps up to 55m), CAT6A (10 Gbps 100m), CAT7 (shielded).</p>
+
+        <!-- EMBEDDED VIDEO PLAYER -->
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/Uw8FSXx4dnU" 
+                title="How To Make Ethernet Cable RJ45 - Straight Through & Crossover" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- EMBEDDED DIAGRAM IMAGE -->
+        <div class="diagram-container">
+            <img 
+                src="https://www.fomsn.com/wp-content/uploads/2016/07/ethernet-cable-color-code-straight-and-crossover.jpg" 
+                alt="Ethernet Cable Wiring Diagram - T568A and T568B for Straight-Through and Crossover"
+                loading="lazy"
+            />
+            <div class="caption">
+                <i class="fas fa-info-circle"></i> Diagram: T568A (top) vs T568B (bottom) – Straight-Through (same both ends) and Crossover (one end T568A, other T568B).
+            </div>
+        </div>
+
         <details>
             <summary>RJ45 Connectors & Wiring</summary>
             <div class="content">
@@ -788,17 +873,21 @@
         <p><a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER with Educational Note ========== -->
     <footer>
         <div class="container">
             <div><h4>CSS HUB</h4><ul><li><a href="#" data-page="home">Home</a></li><li><a href="#" data-page="about">About</a></li></ul></div>
             <div><h4>Learn</h4><ul><li><a href="#" data-page="pc-building">PC Building</a></li><li><a href="#" data-page="ethernet">Ethernet</a></li><li><a href="#" data-page="server">Server</a></li></ul></div>
             <div><h4>Resources</h4><ul><li><a href="#" data-page="downloads">Downloads</a></li><li><a href="#" data-page="quiz">Quiz</a></li></ul></div>
             <div><h4>Connect</h4><ul><li><a href="#" data-page="contact">Contact</a></li><li><a href="#">GitHub</a></li></ul></div>
-            <!-- footer bottom with email -->
             <div class="footer-bottom">
                 <p>For additional info and bug reports: <a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
                 <p style="margin-top:4px; font-size:0.8rem;">&copy; 2026 CSS HUB – coded by kinx kenjie f. martinez</p>
+                <div class="educational-note">
+                    <i class="fas fa-school"></i> Made for educational purposes only. 
+                    Don Pablo Memorial Stand-Alone Senior High School – ICT Strand.
+                    All media and content are used for learning and demonstration.
+                </div>
             </div>
         </div>
     </footer>
@@ -811,7 +900,6 @@
 
         // DOM refs
         const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('mainContent');
         const hamburger = document.getElementById('hamburger');
         const searchInput = document.getElementById('searchInput');
         const themeToggle = document.getElementById('themeToggle');
@@ -834,9 +922,18 @@
             history.pushState(null, '', '#' + pageId);
         }
 
+        // All data-page clicks
         document.querySelectorAll('[data-page]').forEach(el => {
             el.addEventListener('click', function(e) {
                 e.preventDefault();
+                const page = this.dataset.page;
+                if (page) showPage(page);
+            });
+        });
+
+        // Quick Access Cards - ensure they work
+        document.querySelectorAll('.card[data-page]').forEach(card => {
+            card.addEventListener('click', function(e) {
                 const page = this.dataset.page;
                 if (page) showPage(page);
             });
@@ -888,7 +985,6 @@
         const submitBtn = document.getElementById('submitQuiz');
         const resultDiv = document.getElementById('quizResult');
 
-        // load saved
         const savedAnswers = localStorage.getItem('css-hub-quiz');
         if (savedAnswers) {
             try {
@@ -916,7 +1012,6 @@
             quizContainer.innerHTML = html;
             const answered = quizAnswers.filter(a => a !== undefined).length;
             quizProgress.style.width = (answered / quizData.length * 100) + '%';
-            // event listeners
             document.querySelectorAll('.quiz-question input[type="radio"]').forEach(radio => {
                 radio.addEventListener('change', function() {
                     const qIdx = parseInt(this.closest('.quiz-question').dataset.q);
@@ -964,7 +1059,6 @@
             if (window.innerWidth > 992) sidebar.classList.remove('open');
         });
 
-        // Keyboard shortcut: Ctrl+/ to focus search
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === '/') {
                 e.preventDefault();
