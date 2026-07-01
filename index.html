@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS HUB – Learning Hub</title>
-    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         /* ========== RESET & BASE ========== */
@@ -35,9 +34,7 @@
             --text2: #4a5a6e;
             --shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--bg);
@@ -72,9 +69,7 @@
             display: flex;
             align-items: center;
         }
-        body.light header {
-            background: rgba(240,244,248,0.9);
-        }
+        body.light header { background: rgba(240,244,248,0.9); }
         header .container {
             display: flex;
             justify-content: space-between;
@@ -110,9 +105,7 @@
             transition: color var(--transition);
             font-size: 0.95rem;
         }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent);
-        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
         .hamburger {
             display: none;
             font-size: 1.6rem;
@@ -151,9 +144,7 @@
             transition: transform 0.3s ease, background var(--transition);
             z-index: 999;
         }
-        .sidebar.hidden {
-            transform: translateX(-100%);
-        }
+        .sidebar.hidden { transform: translateX(-100%); }
         .sidebar a {
             display: block;
             padding: 10px 14px;
@@ -188,16 +179,12 @@
             padding: 30px 20px;
             transition: margin 0.3s;
         }
-        .main-content.expanded {
-            margin-left: 20px;
-        }
+        .main-content.expanded { margin-left: 20px; }
         .page-section {
             display: none;
             animation: fadeUp 0.3s ease;
         }
-        .page-section.active {
-            display: block;
-        }
+        .page-section.active { display: block; }
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(15px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -531,40 +518,23 @@
         </div>
         <h2>Quick Start</h2>
         <div class="card-grid" id="quickAccessCards">
-            <div class="card" data-page="pc-building">
-                <i class="fas fa-microchip"></i>
-                <h3>PC Building</h3>
-                <p>Step-by-step guide to assemble a computer.</p>
-            </div>
-            <div class="card" data-page="ethernet">
-                <i class="fas fa-network-wired"></i>
-                <h3>Ethernet</h3>
-                <p>Learn cable standards and crimping with video & diagram.</p>
-            </div>
-            <div class="card" data-page="server">
-                <i class="fas fa-server"></i>
-                <h3>Server Setup</h3>
-                <p>Configure Windows/Linux servers.</p>
-            </div>
-            <div class="card" data-page="troubleshooting">
-                <i class="fas fa-tools"></i>
-                <h3>Troubleshooting</h3>
-                <p>Diagnose common hardware/software issues.</p>
-            </div>
+            <div class="card" data-page="pc-building"><i class="fas fa-microchip"></i><h3>PC Building</h3><p>Step-by-step guide to assemble a computer.</p></div>
+            <div class="card" data-page="ethernet"><i class="fas fa-network-wired"></i><h3>Ethernet</h3><p>Learn cable standards and crimping with video & diagram.</p></div>
+            <div class="card" data-page="server"><i class="fas fa-server"></i><h3>Server Setup</h3><p>Configure Windows/Linux servers.</p></div>
+            <div class="card" data-page="troubleshooting"><i class="fas fa-tools"></i><h3>Troubleshooting</h3><p>Diagnose common hardware/software issues.</p></div>
         </div>
     </section>
 
     <!-- ==================== PC BUILDING ==================== -->
     <section id="page-pc-building" class="page-section">
         <h2><i class="fas fa-tools"></i> PC Building Guide</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/UP1mKveeNIA" title="How to Build a PC - Step by Step Beginners Guide 2026" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/oQJr9bjEx8Q" title="PC Building Guide - Assemble & Disassemble" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="caption">Complete step-by-step PC build guide for beginners</div>
+                <div class="caption">Complete guide to assembling and disassembling a PC</div>
             </div>
             <div class="media-item">
                 <h4><i class="fas fa-image"></i> Diagram</h4>
@@ -572,140 +542,57 @@
                 <div class="caption">PC components layout – CPU, RAM, GPU, PSU, storage</div>
             </div>
         </div>
-
-        <details>
-            <summary>Required Tools & Anti-static</summary>
-            <div class="content">
-                <ul><li>Phillips screwdriver (#2), anti-static wrist strap, thermal paste, zip ties.</li>
-                <li>Work on a non-carpeted surface, touch metal case frequently.</li></ul>
-            </div>
-        </details>
-        <details>
-            <summary>CPU & Cooler Installation</summary>
-            <div class="content">
-                <ol><li>Open CPU socket lever, align gold triangle, place CPU gently.</li>
-                <li>Apply pea-sized thermal paste.</li>
-                <li>Mount cooler with correct orientation, tighten evenly.</li></ol>
-            </div>
-        </details>
-        <details>
-            <summary>RAM & Storage</summary>
-            <div class="content">
-                <ul><li>Install RAM in slots A2/B2 for dual-channel.</li>
-                <li>Mount SSD in M.2 slot or 2.5" bay; HDD in 3.5" bay.</li></ul>
-            </div>
-        </details>
-        <details>
-            <summary>GPU & PSU</summary>
-            <div class="content">
-                <ul><li>Insert GPU into PCIe x16 slot, secure with screws.</li>
-                <li>Connect 24-pin motherboard and 8-pin CPU power.</li>
-                <li>Route cables neatly; use cable ties.</li></ul>
-            </div>
-        </details>
-        <details>
-            <summary>Front Panel & BIOS</summary>
-            <div class="content">
-                <ul><li>Connect power switch, reset, HDD LED, USB, audio.</li>
-                <li>First boot: enter BIOS (Del/F2) to set boot order.</li>
-                <li>Common mistakes: forgetting CPU power, incorrect RAM slots.</li></ul>
-            </div>
-        </details>
+        <details><summary>Required Tools & Anti-static</summary><div class="content"><ul><li>Phillips screwdriver (#2), anti-static wrist strap, thermal paste, zip ties.</li><li>Work on a non-carpeted surface, touch metal case frequently.</li></ul></div></details>
+        <details><summary>CPU & Cooler Installation</summary><div class="content"><ol><li>Open CPU socket lever, align gold triangle, place CPU gently.</li><li>Apply pea-sized thermal paste.</li><li>Mount cooler with correct orientation, tighten evenly.</li></ol></div></details>
+        <details><summary>RAM & Storage</summary><div class="content"><ul><li>Install RAM in slots A2/B2 for dual-channel.</li><li>Mount SSD in M.2 slot or 2.5" bay; HDD in 3.5" bay.</li></ul></div></details>
+        <details><summary>GPU & PSU</summary><div class="content"><ul><li>Insert GPU into PCIe x16 slot, secure with screws.</li><li>Connect 24-pin motherboard and 8-pin CPU power.</li><li>Route cables neatly; use cable ties.</li></ul></div></details>
+        <details><summary>Front Panel & BIOS</summary><div class="content"><ul><li>Connect power switch, reset, HDD LED, USB, audio.</li><li>First boot: enter BIOS (Del/F2) to set boot order.</li><li>Common mistakes: forgetting CPU power, incorrect RAM slots.</li></ul></div></details>
     </section>
 
     <!-- ==================== ETHERNET ==================== -->
     <section id="page-ethernet" class="page-section">
         <h2><i class="fas fa-network-wired"></i> Ethernet Installation</h2>
         <p>Ethernet standards: CAT5e (1 Gbps), CAT6 (10 Gbps up to 55m), CAT6A (10 Gbps 100m), CAT7 (shielded).</p>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/KIsEVsbkm90" title="How to Crimp RJ45 Connectors" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/Uw8FSXx4dnU" title="How To Make Ethernet Cable RJ45 - Straight Through & Crossover" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="caption">Step-by-step tutorial on making your own Ethernet cables</div>
+                <div class="caption">How to crimp RJ45 connectors – straight-through and crossover</div>
             </div>
             <div class="media-item">
                 <h4><i class="fas fa-image"></i> Wiring Diagram</h4>
-                <img src="https://www.firewall.cx/images/stories/networking/network-cabling/utp-cable-wiring-diagram.jpg" alt="T568A and T568B wiring diagram" loading="lazy" />
+                <img src="https://cdn.shopify.com/s/files/1/0213/7895/7412/files/ethernetcable_2048x2048.jpg?v=1703253273" alt="T568A and T568B wiring diagram" loading="lazy" />
                 <div class="caption">T568A vs T568B – straight-through (same ends) and crossover (one end each)</div>
             </div>
         </div>
-
-        <details>
-            <summary>RJ45 Connectors & Wiring</summary>
-            <div class="content">
-                <p>T568A: White/Green, Green, White/Orange, Blue, White/Blue, Orange, White/Brown, Brown.</p>
-                <p>T568B: White/Orange, Orange, White/Green, Blue, White/Blue, Green, White/Brown, Brown.</p>
-                <p>Straight-through: both ends same standard. Crossover: one end T568A, other T568B.</p>
-                <div style="background:#0a0a0a; border-radius:8px; padding:10px; margin-top:8px; color:#0f0; font-family:monospace;">
-                    T568B: WO O WG B WB G WBr Br
-                </div>
-            </div>
-        </details>
-        <details>
-            <summary>Crimping Process & Tester</summary>
-            <div class="content">
-                <ol><li>Strip 2.5cm of jacket, untwist pairs, arrange per standard.</li>
-                <li>Cut wires flush, insert into RJ45, crimp firmly.</li>
-                <li>Test with cable tester; check continuity and pin mapping.</li></ol>
-            </div>
-        </details>
-        <details>
-            <summary>Common Problems</summary>
-            <div class="content">
-                <ul><li>Incorrect wiring order → no link.</li>
-                <li>Untwisted pairs too long → crosstalk.</li>
-                <li>Damaged cable → test with TDR.</li></ul>
-            </div>
-        </details>
+        <details><summary>RJ45 Connectors & Wiring</summary><div class="content"><p>T568A: White/Green, Green, White/Orange, Blue, White/Blue, Orange, White/Brown, Brown.</p><p>T568B: White/Orange, Orange, White/Green, Blue, White/Blue, Green, White/Brown, Brown.</p><p>Straight-through: both ends same standard. Crossover: one end T568A, other T568B.</p><div style="background:#0a0a0a; border-radius:8px; padding:10px; margin-top:8px; color:#0f0; font-family:monospace;">T568B: WO O WG B WB G WBr Br</div></div></details>
+        <details><summary>Crimping Process & Tester</summary><div class="content"><ol><li>Strip 2.5cm of jacket, untwist pairs, arrange per standard.</li><li>Cut wires flush, insert into RJ45, crimp firmly.</li><li>Test with cable tester; check continuity and pin mapping.</li></ol></div></details>
+        <details><summary>Common Problems</summary><div class="content"><ul><li>Incorrect wiring order → no link.</li><li>Untwisted pairs too long → crosstalk.</li><li>Damaged cable → test with TDR.</li></ul></div></details>
     </section>
 
     <!-- ==================== SERVER SETUP ==================== -->
     <section id="page-server" class="page-section">
         <h2><i class="fas fa-server"></i> Server Setup</h2>
         <p>A server provides services: Web, File, DHCP, DNS, Active Directory.</p>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/Qn1fMk3m3qA" title="Install Windows Server 2022 on VirtualBox" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/I4pG29mT-oI" title="Install and Configure DHCP Server in Windows Server 2022" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="caption">Install Windows Server 2022 (Step by Step Guide)</div>
+                <div class="caption">Install and Configure DHCP Server in Windows Server 2022</div>
             </div>
         </div>
-
-        <details>
-            <summary>Installing Windows Server</summary>
-            <div class="content">
-                <ul><li>Boot from installation media, select GUI or Core.</li>
-                <li>Set static IP, rename computer, join domain.</li>
-                <li>Install roles: DHCP, DNS, AD DS, File Services.</li></ul>
-            </div>
-        </details>
-        <details>
-            <summary>Linux Server (Ubuntu)</summary>
-            <div class="content">
-                <ul><li>Install minimal server, update packages.</li>
-                <li>Setup SSH, configure network, install LAMP/LEMP.</li>
-                <li>Use <code>systemctl</code> to manage services.</li></ul>
-            </div>
-        </details>
-        <details>
-            <summary>User Accounts & Security</summary>
-            <div class="content">
-                <ul><li>Create users, groups, assign permissions.</li>
-                <li>Implement backup (rsync, VSS) and updates.</li></ul>
-            </div>
-        </details>
+        <details><summary>Installing Windows Server</summary><div class="content"><ul><li>Boot from installation media, select GUI or Core.</li><li>Set static IP, rename computer, join domain.</li><li>Install roles: DHCP, DNS, AD DS, File Services.</li></ul></div></details>
+        <details><summary>Linux Server (Ubuntu)</summary><div class="content"><ul><li>Install minimal server, update packages.</li><li>Setup SSH, configure network, install LAMP/LEMP.</li><li>Use <code>systemctl</code> to manage services.</li></ul></div></details>
+        <details><summary>User Accounts & Security</summary><div class="content"><ul><li>Create users, groups, assign permissions.</li><li>Implement backup (rsync, VSS) and updates.</li></ul></div></details>
     </section>
 
     <!-- ==================== COMPUTER PARTS ==================== -->
     <section id="page-parts" class="page-section">
         <h2><i class="fas fa-microchip"></i> Computer Parts</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Overview</h4>
@@ -715,7 +602,6 @@
                 <div class="caption">Every PC component explained – CPU, motherboard, RAM, GPU, storage, PSU</div>
             </div>
         </div>
-
         <div class="card-grid">
             <div class="card"><h3>CPU</h3><p>Central processor, e.g., Intel Core i5, AMD Ryzen 5.</p></div>
             <div class="card"><h3>Motherboard</h3><p>Main circuit board, ATX, microATX.</p></div>
@@ -731,12 +617,11 @@
     <!-- ==================== MOTHERBOARD ==================== -->
     <section id="page-motherboard" class="page-section">
         <h2><i class="fas fa-print"></i> Motherboard Parts</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Explanation</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/psQa3dSk4JY" title="Motherboard Chipsets Explained" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/6e9WHtW-3rU" title="Motherboard Components Explained" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="caption">Motherboard anatomy – CPU socket, VRM, RAM slots, PCIe, SATA, M.2</div>
             </div>
@@ -762,29 +647,21 @@
     <!-- ==================== BIOS / UEFI ==================== -->
     <section id="page-bios" class="page-section">
         <h2><i class="fas fa-power-off"></i> BIOS &amp; UEFI</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/IdJhkG5zTXE" title="How to Enter BIOS Configuration" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/IdJhkG5zTXE" title="BIOS Settings Tutorial" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="caption">How to navigate and configure BIOS/UEFI settings</div>
             </div>
         </div>
-
-        <ul>
-            <li>Enter BIOS: usually Del, F2, F10 during boot.</li>
-            <li>Set boot order, enable XMP for RAM, configure fans.</li>
-            <li>UEFI offers Secure Boot, TPM, and faster boot.</li>
-            <li>Update BIOS via USB (only if needed).</li>
-        </ul>
+        <ul><li>Enter BIOS: usually Del, F2, F10 during boot.</li><li>Set boot order, enable XMP for RAM, configure fans.</li><li>UEFI offers Secure Boot, TPM, and faster boot.</li><li>Update BIOS via USB (only if needed).</li></ul>
     </section>
 
     <!-- ==================== OS INSTALL ==================== -->
     <section id="page-os-install" class="page-section">
         <h2><i class="fas fa-download"></i> OS Installation</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Windows Installation</h4>
@@ -801,25 +678,14 @@
                 <div class="caption">How to install Linux (Ubuntu) and remove Windows</div>
             </div>
         </div>
-
-        <details>
-            <summary>Creating Bootable USB</summary>
-            <div class="content"><p>Use Rufus or Windows Media Creation Tool. Select UEFI/GPT.</p></div>
-        </details>
-        <details>
-            <summary>Windows Installation</summary>
-            <div class="content"><p>Boot from USB, choose custom install, partition drive, proceed.</p></div>
-        </details>
-        <details>
-            <summary>Linux (Ubuntu) Installation</summary>
-            <div class="content"><p>Similar process; choose "Erase disk" or manual partitioning.</p></div>
-        </details>
+        <details><summary>Creating Bootable USB</summary><div class="content"><p>Use Rufus or Windows Media Creation Tool. Select UEFI/GPT.</p></div></details>
+        <details><summary>Windows Installation</summary><div class="content"><p>Boot from USB, choose custom install, partition drive, proceed.</p></div></details>
+        <details><summary>Linux (Ubuntu) Installation</summary><div class="content"><p>Similar process; choose "Erase disk" or manual partitioning.</p></div></details>
     </section>
 
     <!-- ==================== DRIVERS ==================== -->
     <section id="page-drivers" class="page-section">
         <h2><i class="fas fa-plug"></i> Drivers Installation</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
@@ -829,18 +695,12 @@
                 <div class="caption">Install and update drivers using Device Manager and manufacturer websites</div>
             </div>
         </div>
-
-        <ul>
-            <li>Install chipset, audio, network, GPU drivers from manufacturer.</li>
-            <li>Use Windows Update for some drivers.</li>
-            <li>For legacy hardware, use Device Manager to update.</li>
-        </ul>
+        <ul><li>Install chipset, audio, network, GPU drivers from manufacturer.</li><li>Use Windows Update for some drivers.</li><li>For legacy hardware, use Device Manager to update.</li></ul>
     </section>
 
     <!-- ==================== NETWORKING BASICS ==================== -->
     <section id="page-networking" class="page-section">
         <h2><i class="fas fa-wifi"></i> Networking Basics</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
@@ -850,47 +710,29 @@
                 <div class="caption">Networking basics – OSI model, IP addressing, TCP/IP, DNS, DHCP</div>
             </div>
         </div>
-
-        <ul>
-            <li>IP addressing (IPv4, subnet masks, default gateway).</li>
-            <li>OSI model layers (physical, data link, etc.)</li>
-            <li>Switch vs router vs modem.</li>
-            <li>DHCP dynamically assigns IP addresses.</li>
-        </ul>
+        <ul><li>IP addressing (IPv4, subnet masks, default gateway).</li><li>OSI model layers (physical, data link, etc.)</li><li>Switch vs router vs modem.</li><li>DHCP dynamically assigns IP addresses.</li></ul>
     </section>
 
     <!-- ==================== TROUBLESHOOTING ==================== -->
     <section id="page-troubleshooting" class="page-section">
         <h2><i class="fas fa-exclamation-triangle"></i> Troubleshooting</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/KIsEVsbkm90" title="PC Troubleshooting Guide" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/EOnI3S6-nNk" title="Top 20 Computer Problems with Solutions" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="caption">Common PC problems and how to diagnose them</div>
+                <div class="caption">Top 20 most common computer problems and their solutions</div>
             </div>
         </div>
-
-        <details>
-            <summary>No Display / No Power</summary>
-            <div class="content"><p>Check power cable, PSU switch, monitor input, reseat GPU/RAM.</p></div>
-        </details>
-        <details>
-            <summary>No POST / Boot Loop</summary>
-            <div class="content"><p>Clear CMOS, test one RAM stick, check CPU power, update BIOS.</p></div>
-        </details>
-        <details>
-            <summary>Overheating / Blue Screen</summary>
-            <div class="content"><p>Clean fans, reapply thermal paste, check drivers, run memory test.</p></div>
-        </details>
+        <details><summary>No Display / No Power</summary><div class="content"><p>Check power cable, PSU switch, monitor input, reseat GPU/RAM.</p></div></details>
+        <details><summary>No POST / Boot Loop</summary><div class="content"><p>Clear CMOS, test one RAM stick, check CPU power, update BIOS.</p></div></details>
+        <details><summary>Overheating / Blue Screen</summary><div class="content"><p>Clean fans, reapply thermal paste, check drivers, run memory test.</p></div></details>
     </section>
 
     <!-- ==================== MAINTENANCE ==================== -->
     <section id="page-maintenance" class="page-section">
         <h2><i class="fas fa-broom"></i> Preventive Maintenance</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
@@ -900,19 +742,12 @@
                 <div class="caption">How to clean and maintain your PC for longevity</div>
             </div>
         </div>
-
-        <ul>
-            <li>Clean internals every 6 months with compressed air.</li>
-            <li>Replace thermal paste every 2-3 years.</li>
-            <li>Check cables for wear, update antivirus, defrag HDD.</li>
-            <li>Monitor temps with software.</li>
-        </ul>
+        <ul><li>Clean internals every 6 months with compressed air.</li><li>Replace thermal paste every 2-3 years.</li><li>Check cables for wear, update antivirus, defrag HDD.</li><li>Monitor temps with software.</li></ul>
     </section>
 
     <!-- ==================== SAFETY ==================== -->
     <section id="page-safety" class="page-section">
         <h2><i class="fas fa-shield-alt"></i> Safety Procedures</h2>
-
         <div class="media-grid">
             <div class="media-item">
                 <h4><i class="fas fa-video"></i> Video Tutorial</h4>
@@ -922,25 +757,13 @@
                 <div class="caption">ESD safety, proper lifting, and electrical precautions</div>
             </div>
         </div>
-
-        <ul>
-            <li>Always unplug power before opening.</li>
-            <li>Wear anti-static wrist strap or ground yourself.</li>
-            <li>Do not touch capacitors or exposed circuits.</li>
-            <li>Use proper lifting techniques for heavy equipment.</li>
-        </ul>
+        <ul><li>Always unplug power before opening.</li><li>Wear anti-static wrist strap or ground yourself.</li><li>Do not touch capacitors or exposed circuits.</li><li>Use proper lifting techniques for heavy equipment.</li></ul>
     </section>
 
     <!-- ==================== ACTIVITIES ==================== -->
     <section id="page-activities" class="page-section">
         <h2><i class="fas fa-play"></i> CSS Practical Activities</h2>
-        <ul>
-            <li>Assemble a PC from scratch.</li>
-            <li>Install Windows and drivers.</li>
-            <li>Crimp an Ethernet cable and test.</li>
-            <li>Set up a file server.</li>
-            <li>Diagnose a faulty PC.</li>
-        </ul>
+        <ul><li>Assemble a PC from scratch.</li><li>Install Windows and drivers.</li><li>Crimp an Ethernet cable and test.</li><li>Set up a file server.</li><li>Diagnose a faulty PC.</li></ul>
     </section>
 
     <!-- ==================== QUIZ ==================== -->
@@ -1005,7 +828,6 @@
     (function() {
         "use strict";
 
-        // DOM refs
         const sidebar = document.getElementById('sidebar');
         const hamburger = document.getElementById('hamburger');
         const searchInput = document.getElementById('searchInput');
@@ -1014,36 +836,23 @@
         const navLinks = document.querySelectorAll('.nav-links a');
         const sections = document.querySelectorAll('.page-section');
 
-        // --- Function to pause all YouTube iframes ---
+        // --- Pause all YouTube videos ---
         function pauseAllVideos() {
-            const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
-            iframes.forEach(iframe => {
+            document.querySelectorAll('iframe[src*="youtube.com"]').forEach(iframe => {
                 try {
-                    // Pause using YouTube player API postMessage
-                    iframe.contentWindow.postMessage(
-                        '{"event":"command","func":"pauseVideo","args":""}',
-                        '*'
-                    );
-                } catch (e) {
-                    // cross-origin errors are ignored
-                }
+                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                } catch(e) { /* ignore cross‑origin errors */ }
             });
         }
 
         // --- Navigation ---
         function showPage(pageId) {
-            // Pause all videos before switching
-            pauseAllVideos();
-
+            pauseAllVideos();  // stop any playing video
             sections.forEach(sec => sec.classList.remove('active'));
             const target = document.getElementById('page-' + pageId);
             if (target) target.classList.add('active');
-            sideLinks.forEach(link => {
-                link.classList.toggle('active', link.dataset.page === pageId);
-            });
-            navLinks.forEach(link => {
-                link.classList.toggle('active', link.dataset.page === pageId);
-            });
+            sideLinks.forEach(link => link.classList.toggle('active', link.dataset.page === pageId));
+            navLinks.forEach(link => link.classList.toggle('active', link.dataset.page === pageId));
             if (window.innerWidth <= 992) sidebar.classList.remove('open');
             history.pushState(null, '', '#' + pageId);
         }
@@ -1058,7 +867,7 @@
 
         // Quick Access Cards
         document.querySelectorAll('.card[data-page]').forEach(card => {
-            card.addEventListener('click', function(e) {
+            card.addEventListener('click', function() {
                 const page = this.dataset.page;
                 if (page) showPage(page);
             });
@@ -1086,17 +895,14 @@
             themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i> Light' : '<i class="fas fa-moon"></i> Dark';
             localStorage.setItem('css-hub-theme', isLight ? 'light' : 'dark');
         });
-        const savedTheme = localStorage.getItem('css-hub-theme');
-        if (savedTheme === 'light') {
+        if (localStorage.getItem('css-hub-theme') === 'light') {
             document.body.classList.add('light');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light';
         }
 
-        // --- Pause videos when browser tab is hidden ---
+        // --- Pause on tab switch ---
         document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                pauseAllVideos();
-            }
+            if (document.hidden) pauseAllVideos();
         });
 
         // --- Quiz ---
@@ -1116,10 +922,10 @@
         const submitBtn = document.getElementById('submitQuiz');
         const resultDiv = document.getElementById('quizResult');
 
-        const savedAnswers = localStorage.getItem('css-hub-quiz');
-        if (savedAnswers) {
+        const saved = localStorage.getItem('css-hub-quiz');
+        if (saved) {
             try {
-                quizAnswers = JSON.parse(savedAnswers);
+                quizAnswers = JSON.parse(saved);
                 if (!Array.isArray(quizAnswers) || quizAnswers.length !== quizData.length) {
                     quizAnswers = new Array(quizData.length).fill(undefined);
                 }
@@ -1147,8 +953,8 @@
                 radio.addEventListener('change', function() {
                     const qIdx = parseInt(this.closest('.quiz-question').dataset.q);
                     quizAnswers[qIdx] = parseInt(this.value);
-                    const answeredNow = quizAnswers.filter(a => a !== undefined).length;
-                    quizProgress.style.width = (answeredNow / quizData.length * 100) + '%';
+                    const now = quizAnswers.filter(a => a !== undefined).length;
+                    quizProgress.style.width = (now / quizData.length * 100) + '%';
                 });
             });
         }
@@ -1162,9 +968,7 @@
             }
             resultDiv.innerHTML = `You scored ${correct} out of ${total} (${Math.round(correct/total*100)}%).`;
             localStorage.setItem('css-hub-quiz', JSON.stringify(quizAnswers));
-            if (correct === total) {
-                resultDiv.innerHTML += ' 🎉 Congratulations! You are a CSS expert!';
-            }
+            if (correct === total) resultDiv.innerHTML += ' 🎉 Congratulations! You are a CSS expert!';
         });
 
         // --- Restore page from hash ---
