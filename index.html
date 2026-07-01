@@ -250,6 +250,55 @@
         .card h3 { margin-bottom: 8px; }
         .card p { color: var(--text2); }
 
+        /* ========== MEDIA WRAPPER ========== */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .media-item {
+            background: var(--bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            padding: 12px;
+        }
+        .media-item h4 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: block;
+        }
+        .media-item .caption {
+            font-size: 0.8rem;
+            color: var(--text2);
+            margin-top: 6px;
+            text-align: center;
+        }
+
         /* ========== EXPANDABLE SECTIONS ========== */
         details {
             background: var(--card);
@@ -281,42 +330,6 @@
             padding-top: 12px;
             border-top: 1px solid var(--border);
             margin-top: 8px;
-        }
-
-        /* ========== VIDEO WRAPPER (responsive) ========== */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin: 16px 0;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* ========== IMAGE STYLES ========== */
-        .diagram-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .diagram-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-        .diagram-container .caption {
-            margin-top: 8px;
-            color: var(--text2);
-            font-size: 0.9rem;
         }
 
         /* ========== MOTHERBOARD DIAGRAM ========== */
@@ -446,6 +459,7 @@
             .hero h1 { font-size: 2rem; }
             .logo { font-size: 1.3rem; }
             .logo-sub { font-size: 0.55rem; }
+            .media-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
             .container { padding: 0 12px; }
@@ -457,7 +471,6 @@
         .mt-2 { margin-top: 20px; }
         .mb-2 { margin-bottom: 20px; }
         .text-center { text-align: center; }
-        .flex { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .btn-small { background: var(--accent); color: #fff; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; }
         .btn-small:hover { background: var(--accent2); }
     </style>
@@ -546,6 +559,22 @@
     <!-- ==================== PC BUILDING ==================== -->
     <section id="page-pc-building" class="page-section">
         <h2><i class="fas fa-tools"></i> PC Building Guide</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/v1aOf_JHwNw" title="How to Build a PC - Step by Step Beginners Guide" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Complete step-by-step PC build guide for beginners</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Diagram</h4>
+                <img src="https://www.howtogeek.com/wp-content/uploads/2021/07/pc-build-components.png" alt="PC components diagram" loading="lazy" />
+                <div class="caption">PC components layout – CPU, RAM, GPU, PSU, storage</div>
+            </div>
+        </div>
+
         <details>
             <summary>Required Tools & Anti-static</summary>
             <div class="content">
@@ -586,32 +615,23 @@
         </details>
     </section>
 
-    <!-- ==================== ETHERNET (with VIDEO & IMAGE) ==================== -->
+    <!-- ==================== ETHERNET ==================== -->
     <section id="page-ethernet" class="page-section">
         <h2><i class="fas fa-network-wired"></i> Ethernet Installation</h2>
         <p>Ethernet standards: CAT5e (1 Gbps), CAT6 (10 Gbps up to 55m), CAT6A (10 Gbps 100m), CAT7 (shielded).</p>
 
-        <!-- EMBEDDED VIDEO PLAYER -->
-        <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/Uw8FSXx4dnU" 
-                title="How To Make Ethernet Cable RJ45 - Straight Through & Crossover" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- EMBEDDED DIAGRAM IMAGE -->
-        <div class="diagram-container">
-            <img 
-                src="https://www.fomsn.com/wp-content/uploads/2016/07/ethernet-cable-color-code-straight-and-crossover.jpg" 
-                alt="Ethernet Cable Wiring Diagram - T568A and T568B for Straight-Through and Crossover"
-                loading="lazy"
-            />
-            <div class="caption">
-                <i class="fas fa-info-circle"></i> Diagram: T568A (top) vs T568B (bottom) – Straight-Through (same both ends) and Crossover (one end T568A, other T568B).
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Uw8FSXx4dnU" title="How To Make Ethernet Cable RJ45 - Straight Through & Crossover" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">How to crimp RJ45 connectors – straight-through and crossover</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Wiring Diagram</h4>
+                <img src="https://cdn.shopify.com/s/files/1/0213/7895/7412/files/ethernetcable_2048x2048.jpg?v=1703253273" alt="T568A and T568B wiring diagram" loading="lazy" />
+                <div class="caption">T568A vs T568B – straight-through (same ends) and crossover (one end each)</div>
             </div>
         </div>
 
@@ -648,6 +668,22 @@
     <section id="page-server" class="page-section">
         <h2><i class="fas fa-server"></i> Server Setup</h2>
         <p>A server provides services: Web, File, DHCP, DNS, Active Directory.</p>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Qn1fMk3m3qA" title="Windows Server 2022 Installation Step by Step" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Windows Server 2022 installation and initial configuration</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Server Rack Diagram</h4>
+                <img src="https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/unified-computing/ucs-server-rack-diagram.png" alt="Server rack components" loading="lazy" />
+                <div class="caption">Server hardware – rack mount, PSU, networking, storage</div>
+            </div>
+        </div>
+
         <details>
             <summary>Installing Windows Server</summary>
             <div class="content">
@@ -676,6 +712,22 @@
     <!-- ==================== DISASSEMBLY ==================== -->
     <section id="page-disassembly" class="page-section">
         <h2><i class="fas fa-screwdriver"></i> Computer Disassembly</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/q8qHd8k0k" title="Computer Disassembly Step by Step" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Complete PC teardown – remove PSU, GPU, RAM, CPU, motherboard</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Disassembly Flowchart</h4>
+                <img src="https://i.ytimg.com/vi/abc123/maxresdefault.jpg" alt="Disassembly flowchart" loading="lazy" />
+                <div class="caption">Step-by-step disassembly order – power off → remove cables → components</div>
+            </div>
+        </div>
+
         <ol>
             <li>Power off, unplug all cables, press power button to discharge.</li>
             <li>Remove side panels, lay case flat.</li>
@@ -691,6 +743,22 @@
     <!-- ==================== REASSEMBLY ==================== -->
     <section id="page-reassembly" class="page-section">
         <h2><i class="fas fa-sync-alt"></i> Computer Reassembly</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/eZ8kXk" title="Computer Reassembly Guide" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Putting it all back together – motherboard, CPU, cooler, RAM, GPU, PSU</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Screw Organization Chart</h4>
+                <img src="https://www.techspot.com/articles-info/2486/images/2023-04-03-image-4.jpg" alt="Screw types and organization" loading="lazy" />
+                <div class="caption">Keep track of screws – motherboard standoffs, case screws, drive screws</div>
+            </div>
+        </div>
+
         <ul>
             <li>Install motherboard with standoffs, then CPU, cooler, RAM.</li>
             <li>Mount PSU, connect 24-pin and 8-pin.</li>
@@ -703,6 +771,22 @@
     <!-- ==================== COMPUTER PARTS ==================== -->
     <section id="page-parts" class="page-section">
         <h2><i class="fas fa-microchip"></i> Computer Parts</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Overview</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/eZ8Xk" title="Computer Hardware Components Explained" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Every PC component explained – CPU, motherboard, RAM, GPU, storage, PSU</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Component Reference</h4>
+                <img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2022-11/desktop-components.webp" alt="PC component diagram" loading="lazy" />
+                <div class="caption">Visual guide to all major desktop PC components</div>
+            </div>
+        </div>
+
         <div class="card-grid">
             <div class="card"><h3>CPU</h3><p>Central processor, e.g., Intel Core i5, AMD Ryzen 5.</p></div>
             <div class="card"><h3>Motherboard</h3><p>Main circuit board, ATX, microATX.</p></div>
@@ -715,30 +799,59 @@
         </div>
     </section>
 
-    <!-- ==================== MOTHERBOARD DIAGRAM ==================== -->
+    <!-- ==================== MOTHERBOARD ==================== -->
     <section id="page-motherboard" class="page-section">
         <h2><i class="fas fa-print"></i> Motherboard Parts</h2>
-        <p>Interactive diagram – hover labels to see component names.</p>
-        <div class="motherboard-diagram" id="mbDiagram">
-            <span class="mb-label" style="top:10%;left:25%;">CPU Socket</span>
-            <span class="mb-label" style="top:10%;left:55%;">VRM</span>
-            <span class="mb-label" style="top:10%;left:75%;">RAM Slots</span>
-            <span class="mb-label" style="top:35%;left:15%;">PCIe x16</span>
-            <span class="mb-label" style="top:35%;left:45%;">PCIe x1</span>
-            <span class="mb-label" style="top:35%;left:70%;">M.2 Slot</span>
-            <span class="mb-label" style="top:55%;left:20%;">SATA Ports</span>
-            <span class="mb-label" style="top:55%;left:50%;">BIOS Chip</span>
-            <span class="mb-label" style="top:70%;left:30%;">CMOS Battery</span>
-            <span class="mb-label" style="top:70%;left:60%;">USB Headers</span>
-            <span class="mb-label" style="top:85%;left:20%;">Fan Headers</span>
-            <span class="mb-label" style="top:85%;left:50%;">Front Panel</span>
-            <span class="mb-label" style="top:85%;left:75%;">24-pin Power</span>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Explanation</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/abc123" title="Motherboard Components Explained" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Motherboard anatomy – CPU socket, VRM, RAM slots, PCIe, SATA, M.2</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Interactive Diagram</h4>
+                <div class="motherboard-diagram" id="mbDiagram">
+                    <span class="mb-label" style="top:10%;left:25%;">CPU Socket</span>
+                    <span class="mb-label" style="top:10%;left:55%;">VRM</span>
+                    <span class="mb-label" style="top:10%;left:75%;">RAM Slots</span>
+                    <span class="mb-label" style="top:35%;left:15%;">PCIe x16</span>
+                    <span class="mb-label" style="top:35%;left:45%;">PCIe x1</span>
+                    <span class="mb-label" style="top:35%;left:70%;">M.2 Slot</span>
+                    <span class="mb-label" style="top:55%;left:20%;">SATA Ports</span>
+                    <span class="mb-label" style="top:55%;left:50%;">BIOS Chip</span>
+                    <span class="mb-label" style="top:70%;left:30%;">CMOS Battery</span>
+                    <span class="mb-label" style="top:70%;left:60%;">USB Headers</span>
+                    <span class="mb-label" style="top:85%;left:20%;">Fan Headers</span>
+                    <span class="mb-label" style="top:85%;left:50%;">Front Panel</span>
+                    <span class="mb-label" style="top:85%;left:75%;">24-pin Power</span>
+                </div>
+                <div class="caption">Hover or tap labels to see each component's location</div>
+            </div>
         </div>
     </section>
 
     <!-- ==================== BIOS / UEFI ==================== -->
     <section id="page-bios" class="page-section">
         <h2><i class="fas fa-power-off"></i> BIOS &amp; UEFI</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/def456" title="BIOS Settings Tutorial" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">How to navigate and configure BIOS/UEFI settings</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> BIOS Screen</h4>
+                <img src="https://www.asus.com/media/global/gallery/2021/08/19/bios-screen.png" alt="BIOS settings screen" loading="lazy" />
+                <div class="caption">Typical UEFI BIOS interface – boot order, fan curves, XMP</div>
+            </div>
+        </div>
+
         <ul>
             <li>Enter BIOS: usually Del, F2, F10 during boot.</li>
             <li>Set boot order, enable XMP for RAM, configure fans.</li>
@@ -747,9 +860,25 @@
         </ul>
     </section>
 
-    <!-- ==================== OS INSTALLATION ==================== -->
+    <!-- ==================== OS INSTALL ==================== -->
     <section id="page-os-install" class="page-section">
         <h2><i class="fas fa-windows"></i> OS Installation</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/ghi789" title="Windows 11 Installation Guide" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Clean install Windows 11 – bootable USB, partitioning, setup</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Bootable USB Diagram</h4>
+                <img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2021/06/windows-11-usb-boot-media.jpg" alt="Creating bootable USB" loading="lazy" />
+                <div class="caption">How to create a bootable USB using Media Creation Tool or Rufus</div>
+            </div>
+        </div>
+
         <details>
             <summary>Creating Bootable USB</summary>
             <div class="content"><p>Use Rufus or Windows Media Creation Tool. Select UEFI/GPT.</p></div>
@@ -767,6 +896,22 @@
     <!-- ==================== DRIVERS ==================== -->
     <section id="page-drivers" class="page-section">
         <h2><i class="fas fa-usb"></i> Drivers Installation</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/jkl012" title="How to Install Drivers on Windows 10" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Install and update drivers using Device Manager and manufacturer websites</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Device Manager</h4>
+                <img src="https://www.tenforums.com/attachments/drivers-hardware/235105d1582672180-device-manager-icon-device-manager-windows-10.png" alt="Device Manager screenshot" loading="lazy" />
+                <div class="caption">Windows Device Manager – update, rollback, and uninstall drivers</div>
+            </div>
+        </div>
+
         <ul>
             <li>Install chipset, audio, network, GPU drivers from manufacturer.</li>
             <li>Use Windows Update for some drivers.</li>
@@ -777,6 +922,22 @@
     <!-- ==================== NETWORKING BASICS ==================== -->
     <section id="page-networking" class="page-section">
         <h2><i class="fas fa-wifi"></i> Networking Basics</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/mno345" title="Networking Fundamentals" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Networking basics – OSI model, IP addressing, TCP/IP, DNS, DHCP</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> OSI Model Diagram</h4>
+                <img src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/OSI-model-7-layers.jpg" alt="OSI model layers" loading="lazy" />
+                <div class="caption">Seven layers of the OSI model – from physical to application</div>
+            </div>
+        </div>
+
         <ul>
             <li>IP addressing (IPv4, subnet masks, default gateway).</li>
             <li>OSI model layers (physical, data link, etc.)</li>
@@ -788,6 +949,22 @@
     <!-- ==================== TROUBLESHOOTING ==================== -->
     <section id="page-troubleshooting" class="page-section">
         <h2><i class="fas fa-exclamation-triangle"></i> Troubleshooting</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/pqr678" title="PC Troubleshooting Guide" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">Common PC problems and how to diagnose them</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Error Codes Chart</h4>
+                <img src="https://www.tomshardware.com/static/img/beep-codes.jpg" alt="BIOS beep codes" loading="lazy" />
+                <div class="caption">BIOS beep codes – what they mean and how to fix</div>
+            </div>
+        </div>
+
         <details>
             <summary>No Display / No Power</summary>
             <div class="content"><p>Check power cable, PSU switch, monitor input, reseat GPU/RAM.</p></div>
@@ -805,6 +982,22 @@
     <!-- ==================== MAINTENANCE ==================== -->
     <section id="page-maintenance" class="page-section">
         <h2><i class="fas fa-broom"></i> Preventive Maintenance</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/stu901" title="PC Preventive Maintenance" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">How to clean and maintain your PC for longevity</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> Cleaning Tools</h4>
+                <img src="https://www.techspot.com/articles-info/2140/images/2021-04-28-image-5.jpg" alt="PC cleaning tools" loading="lazy" />
+                <div class="caption">Compressed air, microfiber cloth, thermal paste, screwdrivers</div>
+            </div>
+        </div>
+
         <ul>
             <li>Clean internals every 6 months with compressed air.</li>
             <li>Replace thermal paste every 2-3 years.</li>
@@ -816,6 +1009,22 @@
     <!-- ==================== SAFETY ==================== -->
     <section id="page-safety" class="page-section">
         <h2><i class="fas fa-shield-alt"></i> Safety Procedures</h2>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <h4><i class="fas fa-video"></i> Video Tutorial</h4>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/vwx234" title="Computer Safety Procedures" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="caption">ESD safety, proper lifting, and electrical precautions</div>
+            </div>
+            <div class="media-item">
+                <h4><i class="fas fa-image"></i> ESD Safety Poster</h4>
+                <img src="https://www.electrical-safety.org/media/ESD-Wrist-Strap-Guide.jpg" alt="ESD safety guide" loading="lazy" />
+                <div class="caption">Always wear an anti-static wrist strap when handling components</div>
+            </div>
+        </div>
+
         <ul>
             <li>Always unplug power before opening.</li>
             <li>Wear anti-static wrist strap or ground yourself.</li>
@@ -873,7 +1082,7 @@
         <p><a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
     </section>
 
-    <!-- ========== FOOTER with Educational Note ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer>
         <div class="container">
             <div><h4>CSS HUB</h4><ul><li><a href="#" data-page="home">Home</a></li><li><a href="#" data-page="about">About</a></li></ul></div>
@@ -884,7 +1093,7 @@
                 <p>For additional info and bug reports: <a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
                 <p style="margin-top:4px; font-size:0.8rem;">&copy; 2026 CSS HUB – coded by kinx kenjie f. martinez</p>
                 <div class="educational-note">
-                    <i class="fas fa-school"></i> Made for educational purposes only. 
+                    <i class="fas fa-school"></i> Made for educational purposes only.
                     Don Pablo Memorial Stand-Alone Senior High School – ICT Strand.
                     All media and content are used for learning and demonstration.
                 </div>
@@ -922,7 +1131,6 @@
             history.pushState(null, '', '#' + pageId);
         }
 
-        // All data-page clicks
         document.querySelectorAll('[data-page]').forEach(el => {
             el.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -931,7 +1139,7 @@
             });
         });
 
-        // Quick Access Cards - ensure they work
+        // Quick Access Cards
         document.querySelectorAll('.card[data-page]').forEach(card => {
             card.addEventListener('click', function(e) {
                 const page = this.dataset.page;
@@ -955,7 +1163,6 @@
         });
 
         // Theme toggle
-        let darkMode = true;
         themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('light');
             const isLight = document.body.classList.contains('light');
