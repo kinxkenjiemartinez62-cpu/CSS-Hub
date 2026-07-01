@@ -1,18 +1,10 @@
-```
-============================================================
-|   CSS LEARNING HUB - COMPLETE SINGLE-PAGE APPLICATION    |
-|   (All 20 pages as sections, interactive features)       |
-============================================================
-```
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Learning Hub</title>
-    <!-- Font Awesome for icons (free CDN) -->
+    <title>CSS HUB – Learning Hub</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         /* ========== RESET & BASE ========== */
@@ -52,7 +44,7 @@
             color: var(--text);
             line-height: 1.6;
             transition: background var(--transition), color var(--transition);
-            padding-top: 70px; /* space for fixed header */
+            padding-top: 70px;
         }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -61,12 +53,11 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* ========== SCROLLBAR ========== */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg2); }
         ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-        /* ========== HEADER / NAV ========== */
+        /* ========== HEADER ========== */
         header {
             position: fixed;
             top: 0;
@@ -90,13 +81,24 @@
             align-items: center;
             width: 100%;
         }
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--accent);
             letter-spacing: -0.5px;
         }
-        .logo i { margin-right: 8px; }
+        .logo i { margin-right: 6px; }
+        .logo-sub {
+            font-size: 0.65rem;
+            color: var(--text2);
+            letter-spacing: 0.3px;
+            margin-top: -2px;
+        }
         .nav-links {
             display: flex;
             gap: 20px;
@@ -119,7 +121,6 @@
             color: var(--text);
             cursor: pointer;
         }
-        /* dark/light toggle */
         .theme-toggle {
             background: none;
             border: 1px solid var(--border);
@@ -136,7 +137,7 @@
         }
         .theme-toggle:hover { background: var(--card); }
 
-        /* ========== SIDEBAR (desktop) ========== */
+        /* ========== SIDEBAR ========== */
         .sidebar {
             position: fixed;
             top: 70px;
@@ -225,7 +226,7 @@
         }
         .hero .btn:hover { background: var(--accent2); text-decoration: none; }
 
-        /* ========== CARDS & GRID ========== */
+        /* ========== CARDS ========== */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -255,7 +256,6 @@
             border-radius: var(--radius);
             padding: 12px 20px;
             margin-bottom: 12px;
-            transition: background 0.1s;
         }
         details summary {
             font-weight: 600;
@@ -282,7 +282,7 @@
             margin-top: 8px;
         }
 
-        /* ========== INTERACTIVE MOTHERBOARD ========== */
+        /* ========== MOTHERBOARD DIAGRAM ========== */
         .motherboard-diagram {
             position: relative;
             width: 100%;
@@ -308,7 +308,6 @@
             white-space: nowrap;
             transform: translate(-50%, -50%);
         }
-        /* placeholder positions – adjust as needed */
         .mb-label:nth-child(1) { top: 15%; left: 20%; }
         .mb-label:nth-child(2) { top: 15%; left: 50%; }
         .mb-label:nth-child(3) { top: 15%; left: 75%; }
@@ -367,7 +366,7 @@
             margin-top: 60px;
             background: var(--bg2);
             border-top: 1px solid var(--border);
-            padding: 40px 20px;
+            padding: 40px 20px 20px;
         }
         footer .container {
             display: grid;
@@ -379,6 +378,19 @@
         footer ul li { margin-bottom: 6px; }
         footer ul li a { color: var(--text2); transition: color 0.2s; }
         footer ul li a:hover { color: var(--accent); }
+        footer .footer-bottom {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text2);
+        }
+        footer .footer-bottom a {
+            color: var(--accent);
+            font-weight: 500;
+        }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 992px) {
@@ -388,6 +400,8 @@
             .hamburger { display: block; }
             .nav-links { display: none; }
             .hero h1 { font-size: 2rem; }
+            .logo { font-size: 1.3rem; }
+            .logo-sub { font-size: 0.55rem; }
         }
         @media (max-width: 600px) {
             .container { padding: 0 12px; }
@@ -396,7 +410,6 @@
             .motherboard-diagram { aspect-ratio: 16/12; }
             .mb-label { font-size: 0.5rem; padding: 2px 6px; }
         }
-        /* Utility */
         .mt-2 { margin-top: 20px; }
         .mb-2 { margin-bottom: 20px; }
         .text-center { text-align: center; }
@@ -410,7 +423,10 @@
 <!-- ========== HEADER ========== -->
 <header>
     <div class="container">
-        <div class="logo"><i class="fas fa-microchip"></i> CSS Hub</div>
+        <div class="logo-wrapper">
+            <div class="logo"><i class="fas fa-microchip"></i> CSS HUB</div>
+            <div class="logo-sub">coded by kinx kenjie f. martinez</div>
+        </div>
         <div class="nav-links">
             <a href="#" data-page="home" class="active">Home</a>
             <a href="#" data-page="about">About</a>
@@ -454,7 +470,7 @@
     <!-- ==================== HOME ==================== -->
     <section id="page-home" class="page-section active">
         <div class="hero">
-            <h1>Welcome to <span>CSS Learning Hub</span></h1>
+            <h1>Welcome to <span>CSS HUB</span></h1>
             <p>Your complete resource for Computer Systems Servicing – from building PCs to networking and troubleshooting.</p>
             <a href="#" class="btn" data-page="pc-building">Start Learning <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -761,23 +777,29 @@
     <!-- ==================== ABOUT ==================== -->
     <section id="page-about" class="page-section">
         <h2><i class="fas fa-info-circle"></i> About</h2>
-        <p>CSS Learning Hub is a free educational resource for Computer Systems Servicing students. It covers hardware, software, networking, and maintenance with interactive tools and quizzes.</p>
+        <p>CSS HUB is a free educational resource for Computer Systems Servicing students. It covers hardware, software, networking, and maintenance with interactive tools and quizzes.</p>
+        <p>Created by kinx kenjie f. martinez – a student developer passionate about technology education.</p>
     </section>
 
     <!-- ==================== CONTACT ==================== -->
     <section id="page-contact" class="page-section">
         <h2><i class="fas fa-envelope"></i> Contact</h2>
-        <p>Email: csshub@example.com</p>
-        <p>Follow us on social media for updates.</p>
+        <p>For questions, suggestions, or bug reports, please email:</p>
+        <p><a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
     </section>
 
     <!-- ========== FOOTER ========== -->
     <footer>
         <div class="container">
-            <div><h4>CSS Hub</h4><ul><li><a href="#" data-page="home">Home</a></li><li><a href="#" data-page="about">About</a></li></ul></div>
+            <div><h4>CSS HUB</h4><ul><li><a href="#" data-page="home">Home</a></li><li><a href="#" data-page="about">About</a></li></ul></div>
             <div><h4>Learn</h4><ul><li><a href="#" data-page="pc-building">PC Building</a></li><li><a href="#" data-page="ethernet">Ethernet</a></li><li><a href="#" data-page="server">Server</a></li></ul></div>
             <div><h4>Resources</h4><ul><li><a href="#" data-page="downloads">Downloads</a></li><li><a href="#" data-page="quiz">Quiz</a></li></ul></div>
             <div><h4>Connect</h4><ul><li><a href="#" data-page="contact">Contact</a></li><li><a href="#">GitHub</a></li></ul></div>
+            <!-- footer bottom with email -->
+            <div class="footer-bottom">
+                <p>For additional info and bug reports: <a href="mailto:kinxkenjiemartinez62@gmail.com">kinxkenjiemartinez62@gmail.com</a></p>
+                <p style="margin-top:4px; font-size:0.8rem;">&copy; 2026 CSS HUB – coded by kinx kenjie f. martinez</p>
+            </div>
         </div>
     </footer>
 </div>
@@ -787,7 +809,7 @@
     (function() {
         "use strict";
 
-        // --- DOM refs ---
+        // DOM refs
         const sidebar = document.getElementById('sidebar');
         const mainContent = document.getElementById('mainContent');
         const hamburger = document.getElementById('hamburger');
@@ -797,27 +819,21 @@
         const navLinks = document.querySelectorAll('.nav-links a');
         const sections = document.querySelectorAll('.page-section');
 
-        // --- Page navigation ---
+        // --- Navigation ---
         function showPage(pageId) {
-            // hide all sections
             sections.forEach(sec => sec.classList.remove('active'));
-            // show target
             const target = document.getElementById('page-' + pageId);
             if (target) target.classList.add('active');
-            // update sidebar and header links
             sideLinks.forEach(link => {
                 link.classList.toggle('active', link.dataset.page === pageId);
             });
             navLinks.forEach(link => {
                 link.classList.toggle('active', link.dataset.page === pageId);
             });
-            // close sidebar on mobile
             if (window.innerWidth <= 992) sidebar.classList.remove('open');
-            // update URL hash (optional)
             history.pushState(null, '', '#' + pageId);
         }
 
-        // Event listeners for all nav links
         document.querySelectorAll('[data-page]').forEach(el => {
             el.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -826,30 +842,22 @@
             });
         });
 
-        // Hamburger toggle
+        // Hamburger
         hamburger.addEventListener('click', function() {
             sidebar.classList.toggle('open');
         });
 
-        // --- Search ---
+        // Search
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase().trim();
-            // Search through sidebar links
             sideLinks.forEach(link => {
                 const text = link.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    link.style.display = 'block';
-                } else {
-                    link.style.display = 'none';
-                }
+                link.style.display = text.includes(query) ? 'block' : 'none';
             });
-            // If query empty, show all
-            if (!query) {
-                sideLinks.forEach(link => link.style.display = 'block');
-            }
+            if (!query) sideLinks.forEach(link => link.style.display = 'block');
         });
 
-        // --- Dark/Light toggle ---
+        // Theme toggle
         let darkMode = true;
         themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('light');
@@ -857,14 +865,13 @@
             themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i> Light' : '<i class="fas fa-moon"></i> Dark';
             localStorage.setItem('css-hub-theme', isLight ? 'light' : 'dark');
         });
-        // load saved theme
         const savedTheme = localStorage.getItem('css-hub-theme');
         if (savedTheme === 'light') {
             document.body.classList.add('light');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light';
         }
 
-        // --- Quiz System ---
+        // --- Quiz ---
         const quizData = [
             { q: 'What is the most common connector for Ethernet cables?', options: ['RJ11', 'RJ45', 'USB-C', 'HDMI'], answer: 1 },
             { q: 'Which tool is used to test Ethernet cables?', options: ['Multimeter', 'Cable tester', 'Oscilloscope', 'Voltmeter'], answer: 1 },
@@ -875,12 +882,24 @@
             { q: 'Which OS is open-source?', options: ['Windows', 'macOS', 'Linux', 'Chrome OS'], answer: 2 },
             { q: 'What does DHCP do?', options: ['Assigns IP addresses', 'Translates domain names', 'Routes packets', 'Manages storage'], answer: 0 },
         ];
-        let currentQuiz = 0;
         let quizAnswers = [];
         const quizContainer = document.getElementById('quizQuestions');
         const quizProgress = document.getElementById('quizProgressBar');
         const submitBtn = document.getElementById('submitQuiz');
         const resultDiv = document.getElementById('quizResult');
+
+        // load saved
+        const savedAnswers = localStorage.getItem('css-hub-quiz');
+        if (savedAnswers) {
+            try {
+                quizAnswers = JSON.parse(savedAnswers);
+                if (!Array.isArray(quizAnswers) || quizAnswers.length !== quizData.length) {
+                    quizAnswers = new Array(quizData.length).fill(undefined);
+                }
+            } catch(e) { quizAnswers = new Array(quizData.length).fill(undefined); }
+        } else {
+            quizAnswers = new Array(quizData.length).fill(undefined);
+        }
 
         function renderQuiz() {
             let html = '';
@@ -895,10 +914,9 @@
                 html += `</div></div>`;
             });
             quizContainer.innerHTML = html;
-            // update progress
             const answered = quizAnswers.filter(a => a !== undefined).length;
             quizProgress.style.width = (answered / quizData.length * 100) + '%';
-            // store selected answers
+            // event listeners
             document.querySelectorAll('.quiz-question input[type="radio"]').forEach(radio => {
                 radio.addEventListener('change', function() {
                     const qIdx = parseInt(this.closest('.quiz-question').dataset.q);
@@ -908,20 +926,6 @@
                 });
             });
         }
-
-        // load saved answers from localStorage
-        const savedAnswers = localStorage.getItem('css-hub-quiz');
-        if (savedAnswers) {
-            try {
-                quizAnswers = JSON.parse(savedAnswers);
-                if (!Array.isArray(quizAnswers) || quizAnswers.length !== quizData.length) {
-                    quizAnswers = new Array(quizData.length).fill(undefined);
-                }
-            } catch(e) { quizAnswers = new Array(quizData.length).fill(undefined); }
-        } else {
-            quizAnswers = new Array(quizData.length).fill(undefined);
-        }
-
         renderQuiz();
 
         submitBtn.addEventListener('click', function() {
@@ -931,15 +935,13 @@
                 if (quizAnswers[i] === quizData[i].answer) correct++;
             }
             resultDiv.innerHTML = `You scored ${correct} out of ${total} (${Math.round(correct/total*100)}%).`;
-            // save progress
             localStorage.setItem('css-hub-quiz', JSON.stringify(quizAnswers));
-            // if perfect, show certificate message
             if (correct === total) {
                 resultDiv.innerHTML += ' 🎉 Congratulations! You are a CSS expert!';
             }
         });
 
-        // --- Restore page from URL hash ---
+        // --- Restore page from hash ---
         const hash = window.location.hash.replace('#', '');
         if (hash && document.getElementById('page-' + hash)) {
             showPage(hash);
@@ -947,7 +949,7 @@
             showPage('home');
         }
 
-        // --- Close sidebar on outside click (mobile) ---
+        // --- Close sidebar on outside click ---
         document.addEventListener('click', function(e) {
             if (window.innerWidth <= 992) {
                 const isSidebar = sidebar.contains(e.target);
@@ -958,11 +960,8 @@
             }
         });
 
-        // --- Resize handler: auto-close sidebar on wide screens ---
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 992) {
-                sidebar.classList.remove('open');
-            }
+            if (window.innerWidth > 992) sidebar.classList.remove('open');
         });
 
         // Keyboard shortcut: Ctrl+/ to focus search
@@ -977,4 +976,3 @@
 </script>
 </body>
 </html>
-```
